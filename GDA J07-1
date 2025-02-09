@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voetbal Website</GDA J07-1>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .tabs { display: flex; cursor: pointer; background: #0073e6; padding: 10px; }
+        .tab { flex: 1; text-align: center; padding: 10px; color: white; }
+        .tab:hover { background: #005bb5; }
+        .content { display: none; padding: 20px; border: 1px solid #ddd; }
+        .active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab" onclick="showTab(0)">Stand Competitie</div>
+        <div class="tab" onclick="showTab(1)">Wedstrijden & Uitslagen</div>
+        <div class="tab" onclick="showTab(2)">Teamnamen & Spelers</div>
+        <div class="tab" onclick="showTab(3)">Foto's</div>
+    </div>
+    
+    <div class="content active" id="tab0">
+        <h2>Stand Competitie</h2>
+        <p>Voeg hier de stand van de competitie toe.</p>
+    </div>
+    <div class="content" id="tab1">
+        <h2>Wedstrijden & Uitslagen</h2>
+        <p>Voeg hier wedstrijden en uitslagen toe.</p>
+    </div>
+    <div class="content" id="tab2">
+        <h2>Teamnamen & Spelers</h2>
+        <p>Voeg hier de namen van de spelers en het team toe.</p>
+    </div>
+    <div class="content" id="tab3">
+        <h2>Foto's</h2>
+        <p>Upload hier foto's van het team en wedstrijden.</p>
+    </div>
+    
+    <script>
+        function showTab(index) {
+            let contents = document.querySelectorAll('.content');
+            contents.forEach((content, i) => {
+                content.style.display = i === index ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
