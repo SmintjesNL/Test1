@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn Voetbal Website</title>
+    <title>Voetbal Website</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: linear-gradient(to bottom, red, white); margin: 0; }
+        .tabs { display: flex; cursor: pointer; background: #d40000; padding: 10px; }
+        .tab { flex: 1; text-align: center; padding: 10px; color: white; font-weight: bold; }
+        .tab:hover { background: #a00000; }
+        .content { display: none; padding: 20px; border: 1px solid #ddd; background: white; }
+        .active { display: block; }
+    </style>
 </head>
 <body>
-    <h1>Welkom op mijn voetbalwebsite!</h1>
-    <p>Hier komen de wedstrijdresultaten en standen.</p>
+    <div class="tabs">
+        <div class="tab" onclick="showTab(0)">Stand Competitie</div>
+        <div class="tab" onclick="showTab(1)">Wedstrijden & Uitslagen</div>
+        <div class="tab" onclick="showTab(2)">Teamnamen & Spelers</div>
+        <div class="tab" onclick="showTab(3)">Foto's</div>
+    </div>
+    
+    <div class="content active" id="tab0">
+        <h2>Stand Competitie</h2>
+        <p>1: GDA - 10 puntjen</p>
+    </div>
+    <div class="content" id="tab1">
+        <h2>Wedstrijden & Uitslagen</h2>
+        <p>GDA - Quick 4-2</p>
+    </div>
+    <div class="content" id="tab2">
+        <h2>Teamnamen & Spelers</h2>
+        <p>Erik 
+        Mason
+        Kasper</p>
+    </div>
+    <div class="content" id="tab3">
+        <h2>Foto's</h2>
+        <p>Upload hier foto's van het team en wedstrijden.</p>
+    </div>
+    
+    <script>
+        function showTab(index) {
+            let contents = document.querySelectorAll('.content');
+            contents.forEach((content, i) => {
+                content.style.display = i === index ? 'block' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
